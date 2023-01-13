@@ -1,0 +1,12 @@
+#! /bin/bash
+
+# add to path
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH~/.local/private_bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=$PATH:~/.cargo/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=$PATH:$HOME/.tfenv/bin
+
+[ -s rbenv ] && eval "$(rbenv init -)"
+
