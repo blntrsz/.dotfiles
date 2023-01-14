@@ -13,3 +13,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ```
 cd ~ && dot checkout
 ```
+
+```
+config config --local status.showUntrackedFiles no
+```
