@@ -12,11 +12,8 @@ fi
 
 # Load aliasses
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
-[ -f "$HOME/.config/private_aliasrc" ] && source "$HOME/.config/private_aliasrc"
 
 
-# == TMUX ==
-
-## C-f will find a folder and start tmux there
+## Keybindings
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey ^R history-incremental-search-backward
