@@ -14,3 +14,19 @@ cd ~ && dot checkout
 ```
 dot config --local status.showUntrackedFiles no
 ```
+
+## Home Manager
+
+```
+nix-env -iA home-manager
+```
+
+```
+home-manager switch
+```
+
+## NixOS
+
+```
+nixos-rebuild switch
+```
