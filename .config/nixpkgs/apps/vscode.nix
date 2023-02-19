@@ -20,18 +20,21 @@
       };
 
       editor = {
-        fontFamily = "JetBrainsMono";
-        tabSize = 2;
-        fontSize = 20;
-        rulers = [ 120 ];
         accessibilitySupport = "off";
-        minimap.enabled = true;
+        bracketPairColorization.enabled = true;
+        cursorBlinking = "solid";
+        fontFamily = "JetBrainsMono";
+        fontSize = 20;
         formatOnPaste = true;
         formatOnSave = true;
-        cursorBlinking = "solid";
         lineNumbers = "relative";
+        minimap.enabled = true;
         renderControlCharacters = "true";
         renderWhitespace = "boundary";
+        rulers = [ 120 ];
+        stickyScroll.enabled = true;
+        tabSize = 2;
+        wordWrap = true;
       };
 
       workbench = {
@@ -57,7 +60,58 @@
       terminal.integrated = {
         copyOnSelection = true;
       };
-      alignment.operatorPadding = "left";
+      vim = {
+        useSystemClipboard = true;
+        leader = "<space>";
+        normalModeKeyBindingsNonRecursive = [
+          {
+              before = ["<leader>" "l" "a"];
+              commands = ["editor.action.codeAction"];
+          }
+          {
+              before = ["<leader>" "r" "r"];
+              commands = ["editor.action.rename"];
+          }
+          {
+              before = ["<leader>" "d"];
+              commands = ["editor.action.revealDefinition"];
+          }
+          {
+              before = ["K"];
+              commands = ["editor.action.showHover"];
+          }
+          {
+              before = ["<leader>" "e"];
+              commands = ["workbench.action.toggleSidebarVisibility"];
+          }
+          {
+              before = ["<leader>" "s" "s"];
+              after = ["editor.action.splitEditor"];
+          }
+          {
+              before = ["<leader>" "s" "v"];
+              after = ["workbench.action.splitEditorDown"];
+          }
+        ];
+        visualModeKeyBindings = [
+            {
+                before = ["<leader>" "e"];
+                commands = ["workbench.view.explorer"];
+            }
+            {
+                before = ["<leader>" "g" "s"];
+                commands = ["workbench.view.scm"];
+            }
+            {
+                before = [">"];
+                after = [">" "g" "v"];
+            }
+            {
+                before = ["<"];
+                after = ["<" "g" "v"];
+            }
+        ];
+      };
     };
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix

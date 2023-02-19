@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in
 {
   home = {
-
     username = "blntrsz";
     homeDirectory = "/home/blntrsz";
     stateVersion = "22.11";
@@ -14,7 +16,9 @@
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       aws-vault
       cargo
+      unstable.rustc
       curl
+      direnv
       fzf
       gcc9
       gnupg
@@ -24,6 +28,8 @@
       pass
       ripgrep
       tmux
+      nodePackages_latest.pnpm
+      yarn
     ];
   };
 
@@ -35,5 +41,7 @@
     git = (pkgs.callPackage ./apps/git.nix { }).programs.git;
     vscode = (pkgs.callPackage ./apps/vscode.nix { }).programs.vscode;
     zsh = (pkgs.callPackage ./apps/zsh.nix { }).programs.zsh;
+    direnv.enable = true;
+    direnv.nix-direnv.enable = true;
   };
 }
