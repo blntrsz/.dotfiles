@@ -6,7 +6,7 @@ window:
 
 font:
   size: 16.0
-  family: JetBrainsMono
+  family: "mononoki Nerd Font"
 
 shell:
   program: zsh

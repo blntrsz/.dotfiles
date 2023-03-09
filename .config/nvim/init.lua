@@ -1,3 +1,3 @@
-require("options")
-require("keys")
-require("plugins")
+require("config.lazy")
+require("config.options")
+require("config.keys")
