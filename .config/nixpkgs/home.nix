@@ -1,7 +1,4 @@
 { config, pkgs, ... }:
-let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-in
 {
   home = {
     username = "blntrsz";
@@ -16,7 +13,7 @@ in
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       aws-vault
       cargo
-      unstable.rustc
+      rustc
       curl
       direnv
       fzf
@@ -39,7 +36,6 @@ in
     home-manager.enable = true;
 
     git = (pkgs.callPackage ./apps/git.nix { }).programs.git;
-    vscode = (pkgs.callPackage ./apps/vscode.nix { }).programs.vscode;
     zsh = (pkgs.callPackage ./apps/zsh.nix { }).programs.zsh;
     direnv.enable = true;
     direnv.nix-direnv.enable = true;

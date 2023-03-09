@@ -20,6 +20,10 @@
       plugins = [ "git" "vi-mode" ];
       theme = "robbyrussell";
     };
+    initExtra = ''
+      bindkey ^R history-incremental-search-backward
+      bindkey -s ^F "tmux-sessionizer\n"
+    '';
   };
 }
 
