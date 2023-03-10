@@ -1,0 +1,9 @@
+{
+    "diagnostics.disable": [
+        "unused-local",
+        "missing-parameter"
+    ],
+    "diagnostics.globals": [
+        "vim"
+    ]
+}
