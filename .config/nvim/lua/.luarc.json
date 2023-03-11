@@ -4,6 +4,7 @@
         "missing-parameter"
     ],
     "diagnostics.globals": [
-        "vim"
+        "vim",
+        "require"
     ]
 }
