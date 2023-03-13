@@ -6,6 +6,12 @@ return {
 		end,
 	},
 	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	},
+	{
 		"TimUntersberger/neogit",
 		keys = {
 			{ "<leader>gs", "<cmd>Neogit<cr>", desc = "Git" },
