@@ -2,6 +2,13 @@ return {
 	"tpope/vim-commentary",
 	"tpope/vim-surround",
 	{
+		"echasnovski/mini.cursorword",
+		version = "*",
+		config = function()
+			require("mini.cursorword").setup()
+		end,
+	},
+	{
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup({})
