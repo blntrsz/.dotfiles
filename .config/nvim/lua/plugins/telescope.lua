@@ -6,7 +6,7 @@ return {
 		keys = {
 			{
 				"<leader><leader>",
-				"<cmd>lua require('telescope.builtin').find_files()<cr>",
+				"<cmd>lua require('telescope.builtin').find_files({ previewer = false })<cr>",
 				desc = "Telescope find files",
 			},
 			{ "<leader>/", "<cmd>lua require('telescope.builtin').live_grep()<cr>", desc = "Telescope live grep" },

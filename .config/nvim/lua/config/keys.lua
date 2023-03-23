@@ -15,19 +15,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "gl", "$")
 vim.keymap.set("n", "gh", "0")
 
--- register management
-vim.keymap.set("n", "<leader>c", '"_c')
-vim.keymap.set("v", "<leader>c", '"_c')
-vim.keymap.set("n", "<leader>C", '"_C')
-
-vim.keymap.set("n", "<leader>d", '"_d')
-vim.keymap.set("v", "<leader>d", '"_d')
-vim.keymap.set("n", "<leader>D", '"_D')
-
-vim.keymap.set("n", "<leader>p", '"+p')
-vim.keymap.set("v", "<leader>p", '"+p')
-vim.keymap.set("n", "<leader>P", '"+P')
-
 -- better select
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")

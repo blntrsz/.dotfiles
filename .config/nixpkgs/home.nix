@@ -19,14 +19,10 @@
       fzf
       gcc9
       gnupg
-      neovim
       nil
-      nodejs
       pass
       ripgrep
       tmux
-      nodePackages_latest.pnpm
-      yarn
     ];
   };
 

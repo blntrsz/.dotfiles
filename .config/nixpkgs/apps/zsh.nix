@@ -4,7 +4,7 @@
     enable = true;
     shellAliases = {
       ll = "ls -l";
-      up = "sudo nixos-rebuild switch";
+      up = "ansible-playbook ~/.config/ansible/local.yml --ask-become-pass";
       hup = "home-manager switch";
       gs = "git status";
       v = "vim";
@@ -23,6 +23,9 @@
     initExtra = ''
       bindkey ^R history-incremental-search-backward
       bindkey -s ^F "tmux-sessionizer\n"
+
+      export PATH=$HOME/bin:$PATH
+      export PATH=$HOME/.local/bin:$PATH
     '';
   };
 }
