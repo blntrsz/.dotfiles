@@ -1,0 +1,10 @@
+- hosts: localhost
+  pre_tasks:
+    - name: Update Apt
+      become: true
+      ansible.builtin.package:
+        update_cache: yes
+        upgrade: yes
+  tasks:
+    - import_tasks: tasks/nix.yml
+    - import_tasks: tasks/neovim.yml
