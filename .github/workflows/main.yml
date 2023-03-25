@@ -1,0 +1,4 @@
+- name: Ansible CLI
+  uses: tomasnorre/ansible-cli-client@0.0.2
+  with:
+    command: ansible-playbook ~/.config/ansible/local.yml --ask-become-pass
