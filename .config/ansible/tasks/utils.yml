@@ -4,4 +4,5 @@
     name:
       - fzf
       - ripgrep
+      - tmux
   tags: utils
