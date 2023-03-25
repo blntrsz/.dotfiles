@@ -1,0 +1,7 @@
+- name: Install utils
+  become: true
+  ansible.builtin.package:
+    name:
+      - fzf
+      - ripgrep
+  tags: utils
