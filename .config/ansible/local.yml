@@ -1,4 +1,8 @@
 - hosts: localhost
+  vars_prompt:
+    - name: profile
+      prompt: What is your profile? ('personal' or 'work')
+      private: false
   pre_tasks:
     - name: Update Apt
       become: true
@@ -8,3 +12,4 @@
   tasks:
     - import_tasks: tasks/nix.yml
     - import_tasks: tasks/neovim.yml
+    - import_tasks: tasks/home-manager.yml
