@@ -1,4 +1,11 @@
-- name: Ansible CLI
-  uses: tomasnorre/ansible-cli-client@0.0.2
-  with:
-    command: ansible-playbook ~/.config/ansible/local.yml --ask-become-pass
+on:
+  push:
+    branches:
+    - main
+    
+jobs:
+  test:
+    uses: tomasnorre/ansible-cli-client@0.0.2
+    name: Ansible CLI
+    with:
+      command: ansible-playbook ~/.config/ansible/local.yml --ask-become-pass
