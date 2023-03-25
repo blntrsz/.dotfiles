@@ -19,3 +19,6 @@ alias ds="dot status"
 # fnm
 export PATH="/home/blntrsz/.local/share/fnm:$PATH"
 eval "`fnm env`"
+
+# rust
+source "$HOME/.cargo/env"
