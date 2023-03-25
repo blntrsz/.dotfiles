@@ -1,3 +1,12 @@
-- name: Install nix
+- name: Check if nix installed
+  package:
+    name: nix
+    state: present
+  check_mode: true
+  register: nix
+  tags: nix
+
+- name: Install nix if not installed
   command: sh <(curl -L https://nixos.org/nix/install) --daemon
+  when: not nix.changed
   tags: nix

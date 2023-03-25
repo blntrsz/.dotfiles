@@ -1,6 +1,21 @@
+- name: Install home-manager 1
+  command: nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.11.tar.gz home-manager
+  tags: home-manager
+- name: Install home-manager 2
+  become: true
+  command: nix-channel --update
+  tags: home-manager
+- name: Install home-manager 3
+  command: nix-shell '<home-manager>' -A install
+  tags: home-manager
+
 - name: Create a symbolic link
   ansible.builtin.file:
     src: ~/.config/nixpkgs/{{ profile }}.nix
     dest: ~/.config/nixpkgs/home.nix
     state: link
+  tags: home-manager
+
+- name:
+  shell: export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels && home-manager switch
   tags: home-manager
