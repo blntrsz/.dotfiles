@@ -15,10 +15,3 @@ alias v="vim"
 alias vim="nvim"
 alias dot="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias ds="dot status"
-
-# fnm
-export PATH="/home/blntrsz/.local/share/fnm:$PATH"
-eval "`fnm env`"
-
-# rust
-source "$HOME/.cargo/env"
