@@ -13,9 +13,9 @@
   tags: neovim
 
 - name: Remove neovim
-  shell: rm -rf ~/.config/neovim
-  become: true
-  tags: neovim
+  ansible.builtin.file:
+    path: ~/.config/neovim
+    state: absent
 
 - name: Clone Neovim
   ansible.builtin.git:
