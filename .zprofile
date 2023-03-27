@@ -26,13 +26,38 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# homebrew
+if [ -d "/opt/homebrew/bin" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  export PATH="/opt/homebrew/bin:$PATH"
+  export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+fi
+
 # rust
 if [ -f "$HOME/.cargo/env" ]; then
   source "$HOME/.cargo/env"
 fi
 
 # fnm
-if [ -f "/home/blntrsz/.local/share/fnm:$PATH" ]; then
-  export PATH="/home/blntrsz/.local/share/fnm:$PATH"
+if [ -f "$HOME/.local/share/fnm" ]; then
+  export PATH="$HOME/.local/share/fnm:$PATH"
   eval "`fnm env`"
+fi
+
+# rbenv
+if [ -d "$HOME/.rbenv/bin" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  [ -s rbenv ] && eval "$(rbenv init -)"
+fi
+
+# nvm
+if [ -d "$HOME/.nvm" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
+# tfenv
+if [ -d "$HOME/.tfenv/bin" ]; then
+  export PATH="$HOME/.tfenv/bin:$PATH"
 fi

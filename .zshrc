@@ -8,10 +8,5 @@ source $ZSH/oh-my-zsh.sh
 bindkey ^R history-incremental-search-backward
 bindkey -s ^F "~/.config/tmux/tmux-sessionizer\n"
 
-# aliases
-alias up="ansible-playbook ~/.config/ansible/local.yml --ask-become-pass";
-alias gs="git status"
-alias v="vim"
-alias vim="nvim"
-alias dot="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias ds="dot status"
+# Load aliasses
+[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"

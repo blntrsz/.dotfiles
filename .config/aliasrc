@@ -1,0 +1,27 @@
+#! /bin/sh
+
+insomnia_with_token() { 
+  API_TOKEN=$(pass $1) /Applications/Insomnia.app/Contents/MacOS/Insomnia
+}
+
+# git
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias lg="lazygit"
+alias gs="git status"
+alias ds="dot status"
+
+# vim
+alias v='nvim'
+alias vim='nvim'
+
+# insomnia
+alias insomnia_playground="insomnia_with_token insomnia_playground"
+alias insomnia_staging="insomnia_with_token insomnia_staging"
+alias insomnia_preprod="insomnia_with_token insomnia_preprod"
+
+# other
+alias aws-exec="aws-vault exec my-aws-account --"
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
+
+# ansible
+alias up="ansible-playbook ~/.config/ansible/local.yml --ask-become-pass";

@@ -8,9 +8,6 @@ font:
   size: 16.0
   family: "mononoki Nerd Font"
 
-shell:
-  program: zsh
-
 # Colors (Poimandres)
 colors:
   # Default colors
