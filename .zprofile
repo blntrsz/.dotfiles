@@ -45,9 +45,9 @@ if [ -f "$HOME/.local/share/fnm" ]; then
 fi
 
 # rbenv
-if [ -d "$HOME/.rbenv/bin" ]; then
+if [ -d "$HOME/.rbenv" ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
-  [ -s rbenv ] && eval "$(rbenv init -)"
+  eval "$(rbenv init -)"
 fi
 
 # nvm
