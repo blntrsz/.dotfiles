@@ -20,12 +20,9 @@ return {
 		end,
 	},
 	{
-		"TimUntersberger/neogit",
+		"tpope/vim-fugitive",
 		keys = {
-			{ "<leader>gs", "<cmd>Neogit<cr>", desc = "Git" },
+			{ "<leader>gs", "<cmd>Git<cr>", desc = "Git" },
 		},
-		config = function()
-			require("neogit").setup()
-		end,
 	},
 }
