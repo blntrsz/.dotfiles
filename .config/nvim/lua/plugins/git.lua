@@ -22,7 +22,7 @@ return {
 	{
 		"tpope/vim-fugitive",
 		keys = {
-			{ "<leader>gs", "<cmd>Git<cr>", desc = "Git" },
+			{ "<leader>gs", "<cmd>tab G<cr>", desc = "Git" },
 		},
 	},
 }
